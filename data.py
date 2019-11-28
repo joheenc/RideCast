@@ -78,11 +78,11 @@ def analyze(time, day):
     for x in hotspots:
         for y in x:
             if y > hotspots.mean() + 5*hotspots.std():
-                uWu = []
-                uWu.append(y)
-                uWu.append(uniformgrid[x.tolist().index(y)*170+hotspots.tolist().index(x.tolist())][0]+random.uniform(0,.01449)/2)
-                uWu.append(uniformgrid[x.tolist().index(y)*170+hotspots.tolist().index(x.tolist())][1]+random.uniform(0,.01455)/2)
-                finalout.append(uWu)
+                out = []
+                out.append(y)
+                out.append(uniformgrid[x.tolist().index(y)*170+hotspots.tolist().index(x.tolist())][0]+random.uniform(0,.01449)/2)
+                out.append(uniformgrid[x.tolist().index(y)*170+hotspots.tolist().index(x.tolist())][1]+random.uniform(0,.01455)/2)
+                finalout.append(out)
 
     export = []
     for oWo in finalout:
@@ -90,10 +90,10 @@ def analyze(time, day):
     return export
 
 def getdynamic(export):
-    uwu = []
-    for owo in export:
-        uwu.append('{"lat": ' + owo.split(',')[0] + ', "lng": ' + owo.split(',')[1] + '}')
-    return uwu
+    outdynamic = []
+    for exp in export:
+        outdynamic.append('{"lat": ' + exp.split(',')[0] + ', "lng": ' + exp.split(',')[1] + '}')
+    return outdynamic
 
 #to check for cars in a 10-mile radius
 def getdistance(lata, longa, latb, longb):
