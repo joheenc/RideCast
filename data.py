@@ -85,8 +85,8 @@ def analyze(time, day):
                 finalout.append(out)
 
     export = []
-    for oWo in finalout:
-        export.append(str(oWo[1]) + "," + str(oWo[2]))
+    for temp in finalout:
+        export.append(str(temp[1]) + "," + str(temp[2]))
     return export
 
 def getdynamic(export):
